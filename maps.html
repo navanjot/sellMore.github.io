@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customers Location | Customer App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            var loc = window.location.href;
+            if(loc.includes("latitude=") && loc.includes("longitute=")){
+                var o = loc.split('?');
+                var t = o[1].split('&');
+                var th = t[0].split("=");
+                var f = t[1].split("=");
+                myMap(th[1],f[1]);
+            }
+        });
+        function myMap(one,two) {
+            var myCenter = new google.maps.LatLng(one,two);
+            var mapProp= {
+                zoom:5,
+                mapTypeId: google.maps.MapTypeId.HYBRID,
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                overviewMapControl: true,
+                rotateControl: true
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker = new google.maps.Marker({position:myCenter});
+            marker.setMap(map);
+        }
+    </script>
+</head>
+<body style="background: rgba(73,111,72,0.26);">
+<!-- Navigation bar -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Customer App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="customer.html">All Customers</a></li>
+                <li><a href="invoices.html">All Invoices</a></li>
+                <li><a href="products.html">All Products</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="container well">
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: center; padding: 20px;">User Location</div>
+                    </div>
+                </div>
+                <div class="container" style="background: #fff;">
+                    <div id="googleMap" style="width:100%;height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+</nav>
+</body>
+</html>

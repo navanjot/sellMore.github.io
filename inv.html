@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice Info | Customer App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script>
+        $(function() {
+            var one = window.location.href;
+            if (one.includes("inv=")) {
+                var o = one.split("=");
+                invv(o[1]);
+            }
+        });
+        function invv(i) {
+            //data from Invoice.json
+            var xob = new XMLHttpRequest();
+            xob.overrideMimeType("application/json");
+            xob.open('GET', 'json/Invoice.json', true);
+            xob.onreadystatechange = function() {
+                if (xob.readyState == 4 && xob.status == 200) {
+                    var dataa = JSON.parse(xob.responseText);
+                    document.getElementById('eleven').innerHTML = "Order #"+dataa.invoices[i].invNum;
+                    var d = dataa.invoices[i].compId-1;
+
+                    var userinfo = new XMLHttpRequest();
+                    userinfo.overrideMimeType("application/json");
+                    userinfo.open('GET','json/CustomerFile.json',true);
+                    userinfo.onreadystatechange = function(){
+                        if(userinfo.readyState == 4 && userinfo.status == 200){
+                            var userdata = JSON.parse(userinfo.responseText);
+                            document.getElementById('twelve').innerHTML = "<strong>Biller Name:</strong><br>"+userdata.customers[d].compName;
+                            document.getElementById('thirteen').innerHTML = "<strong>Shipped To:</strong><br>"+userdata.customers[d].CompAddr;
+                        }
+                    };
+                    userinfo.send(null);
+
+                    var g = dataa.invoices[i].products[0].prodId-1;
+
+                    var p = new XMLHttpRequest();
+                    p.overrideMimeType("application/json");
+                    p.open('GET','json/Product.json',true);
+                    p.onreadystatechange = function(){
+                        if(p.readyState == 4 && p.status == 200){
+                            var sk = JSON.parse(p.responseText);
+                            document.getElementById('sixt').innerHTML = sk.products[g].prodDesc;
+                            document.getElementById('sevent').innerHTML = "$"+sk.products[g].prodAmt;
+                            var tot1 = sk.products[g].prodAmt * dataa.invoices[i].products[0].qty;
+                            document.getElementById('ninte').innerHTML = "$"+tot1;
+                        }
+                    };
+                    p.send(null);
+
+                    var k = dataa.invoices[i].products[1].prodId-1;
+
+                    var u = new XMLHttpRequest();
+                    u.overrideMimeType("application/json");
+                    u.open('GET','json/Product.json',true);
+                    u.onreadystatechange = function(){
+                        if(u.readyState == 4 && u.status == 200){
+                            var pk = JSON.parse(u.responseText);
+                            document.getElementById('twenty').innerHTML = pk.products[k].prodDesc;
+                            document.getElementById('twentyone').innerHTML = "$"+pk.products[k].prodAmt;
+                            var tot2 = pk.products[k].prodAmt * dataa.invoices[i].products[1].qty;
+                            document.getElementById('twentyth').innerHTML = "$"+tot2;
+                        }
+                    };
+                    u.send(null);
+
+                    document.getElementById('fourteen').innerHTML = "<strong>Date:</strong><br>"+dataa.invoices[i].invDate;
+                    document.getElementById('fifteen').innerHTML = "$"+dataa.invoices[i].invAmt;
+                    document.getElementById('eighte').innerHTML = dataa.invoices[i].products[0].qty;
+                    document.getElementById('twentytwo').innerHTML = dataa.invoices[i].products[1].qty;
+                }
+            };
+            xob.send(null);
+        }
+    </script>
+</head>
+<body style="background: rgba(73,111,72,0.26);">
+<!-- Navigation bar -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Customer App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="customer.html">All Customers</a></li>
+                <li><a href="invoices.html">All Invoices</a></li>
+                <li><a href="products.html">All Products</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="container well">
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center; padding: 20px;">Invoice Info</div>
+                </div>
+            </div>
+            <div class="container" id="invv" style="background: rgb(255,255,255)">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="invoice-title">
+                            <h2>Invoice</h2><h3 class="pull-right" id="eleven"></h3>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div id="twelve"></div>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div id="thirteen"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <!--empty-->
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div id="fourteen"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>Order summary</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <td><strong>Item</strong></td>
+                                            <td class="text-center"><strong>Price</strong></td>
+                                            <td class="text-center"><strong>Quantity</strong></td>
+                                            <td class="text-right"><strong>Totals</strong></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td id="sixt"></td>
+                                            <td class="text-center" id="sevent"></td>
+                                            <td class="text-center" id="eighte"></td>
+                                            <td class="text-right" id="ninte"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="twenty"></td>
+                                            <td class="text-center" id="twentyone"></td>
+                                            <td class="text-center" id="twentytwo"></td>
+                                            <td class="text-right" id="twentyth"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line text-center"><strong>Total</strong></td>
+                                            <td class="thick-line text-right" id="fifteen"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

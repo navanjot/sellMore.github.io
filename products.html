@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products List | Customer App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+</head>
+<body style="background: rgba(73,111,72,0.26);">
+<!-- Navigation bar -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Customer App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="customer.html">All Customers</a></li>
+                <li><a href="invoices.html">All Invoices</a></li>
+                <li><a href="products.html">All Products</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="container well">
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center; padding: 20px;">Products</div>
+                </div>
+            </div>
+            <div class="container" id="pro" style="background: #fff;">
+                <script>
+                    //data from Product.json
+                    var xobb = new XMLHttpRequest();
+                    xobb.overrideMimeType("application/json");
+                    xobb.open('GET', 'json/Product.json', true);
+                    xobb.onreadystatechange = function() {
+                        if (xobb.readyState == 4 && xobb.status == 200) {
+                            var dat = JSON.parse(xobb.responseText);
+                            var twodat = '';
+                            for(var i = 0;i<dat.products.length;i++){
+                                twodat += '<div class="row" style="padding: 10px 0;">'+
+                                    '<div class="col-md-1 col-sm-12 col-xs-12" style="cursor: pointer" onclick="prod('+ i +');" title="View Product"><span class="glyphicon glyphicon-eye-open"></span></div>'+
+                                    '<div class="col-md-1 col-sm-12 col-xs-12">Product Id:#'+dat.products[i].prodId+'</div>'+
+                                    '<div class="col-md-8 col-sm-12 col-xs-12">Description:<strong>'+dat.products[i].prodDesc+'</strong></div>'+
+                                    '<div class="col-md-2 col-sm-12 col-xs-12"><em>Cost:<strong>$'+dat.products[i].prodAmt+'</strong></em></div>'+
+                                    '</div><hr>';
+                            }
+                            document.getElementById('pro').innerHTML = twodat;
+                        }
+                    };
+                    xobb.send(null);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

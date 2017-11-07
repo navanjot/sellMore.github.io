@@ -1,0 +1,23 @@
+{
+	"products":[
+		{ "prodId":1, "prodDesc":"Pilot Precise V5 Stick Rolling Ball Pen, Extra Fine Point, Single Pen, Black Ink -35343", "prodAmt":2.48 },
+
+		{ "prodId":2, "prodDesc":"Luxury Fountain Pen Jinhao 450 Black with Golden 18kgp Broad Nib Medium", "prodAmt":5.98 },
+
+		{ "prodId":3, "prodDesc":"uni-ball ONYX Rollerball, Stick Roller Ball Pen Micro-0.5mm, 12 Pack, Black Ink (60040)", "prodAmt":6.29 },
+
+		{ "prodId":4, "prodDesc":"Austor Water Brush Pen 6 Pcs Assorted Brush Tips Art Paint Watercolor Brushes Set", "prodAmt":14.49 },
+
+		{ "prodId":5, "prodDesc":"Pilot Namiki Standard Fountain Pen Ink, Blue -69201", "prodAmt":16 },
+
+		{ "prodId":6, "prodDesc":"WellieSTR Lot 13 Color PERMANENT PAINT PEN MARKER RUBBER WOOD METAL", "prodAmt":18.34 },
+
+		{ "prodId":7, "prodDesc":"C-Pioneer Queen Bee Marking Pen Identification Rearing Mating Marker Pen (Blue)", "prodAmt":7.31 },
+
+		{ "prodId":8, "prodDesc":"Parker IM Premium Chiseled Medium Point Rollerball Pen, Deep Gun Metal (S0908700)", "prodAmt":46.18 },
+
+		{ "prodId":9, "prodDesc":"Zebra Mini Ballpoint Pen T-5, Black Ink, Silver with Gold Accent", "prodAmt":8.31 },
+
+		{ "prodId":10, "prodDesc":"Zebra Pen F-301 Stainless Steel Retractable Ball Point Pen 2-Pack Card Ink, 27112 (Black)", "prodAmt":4.97 }
+	]
+}

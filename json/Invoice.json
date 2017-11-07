@@ -1,0 +1,304 @@
+{
+	"invoices":[
+		{ 
+			"invNum":1,
+			"invDate":"01-07-2017",
+			"invAmt":75.96,
+			"compId":1,
+			"products":[
+				{ "prodId":2, "qty":2 },
+				{ "prodId":5, "qty":4 }
+			]
+		},
+		{ 
+			"invNum":2,
+			"invDate":"01-07-2017",
+			"invAmt":19.71,
+			"compId":2,
+			"products":[
+				{ "prodId":1, "qty":5 },
+				{ "prodId":7, "qty":1 }
+			]
+		},
+		{ 
+			"invNum":3,
+			"invDate":"02-07-2017",
+			"invAmt":94.36,
+			"compId":3,
+			"products":[
+				{ "prodId":2, "qty":6 },
+				{ "prodId":7, "qty":8 }
+			]
+		},
+		{ 
+			"invNum":4,
+			"invDate":"03-07-2017",
+			"invAmt":166.12,
+			"compId":4,
+			"products":[
+				{ "prodId":6, "qty":7 },
+				{ "prodId":3, "qty":6 }
+			]
+		},
+		{ 
+			"invNum":5,
+			"invDate":"03-07-2017",
+			"invAmt":19.46,
+			"compId":5,
+			"products":[
+				{ "prodId":4, "qty":1 },
+				{ "prodId":10, "qty":1 }
+			]
+		},
+		{ 
+			"invNum":6,
+			"invDate":"05-07-2017",
+			"invAmt":262.90,
+			"compId":6,
+			"products":[
+				{ "prodId":5, "qty":2 },
+				{ "prodId":8, "qty":5 }
+			]
+		},
+		{ 
+			"invNum":7,
+			"invDate":"05-07-2017",
+			"invAmt":54.82,
+			"compId":7,
+			"products":[
+				{ "prodId":9, "qty":6 },
+				{ "prodId":1, "qty":2 }
+			]
+		},
+		{ 
+			"invNum":8,
+			"invDate":"05-07-2017",
+			"invAmt":61.97,
+			"compId":8,
+			"products":[
+				{ "prodId":2, "qty":3 },
+				{ "prodId":3, "qty":7 }
+			]
+		},
+		{ 
+			"invNum":9,
+			"invDate":"06-07-2017",
+			"invAmt":152.85,
+			"compId":9,
+			"products":[
+				{ "prodId":5, "qty":8 },
+				{ "prodId":10, "qty":5 }
+			]
+		},
+		{ 
+			"invNum":10,
+			"invDate":"06-07-2017",
+			"invAmt":106.19,
+			"compId":10,
+			"products":[
+				{ "prodId":4, "qty":1 },
+				{ "prodId":6, "qty":5 }
+			]
+		},
+		{ 
+			"invNum":11,
+			"invDate":"07-07-2017",
+			"invAmt":171.70,
+			"compId":1,
+			"products":[
+				{ "prodId":6, "qty":5 },
+				{ "prodId":5, "qty":5 }
+			]
+		},
+		{ 
+			"invNum":12,
+			"invDate":"08-07-2017",
+			"invAmt":26.58,
+			"compId":2,
+			"products":[
+				{ "prodId":2, "qty":2 },
+				{ "prodId":7, "qty":2 }
+			]
+		},
+		{ 
+			"invNum":13,
+			"invDate":"08-07-2017",
+			"invAmt":86.47,
+			"compId":3,
+			"products":[
+				{ "prodId":6, "qty":3 },
+				{ "prodId":3, "qty":5 }
+			]
+		},
+		{ 
+			"invNum":14,
+			"invDate":"09-07-2017",
+			"invAmt":476.68,
+			"compId":4,
+			"products":[
+				{ "prodId":1, "qty":6 },
+				{ "prodId":8, "qty":10 }
+			]
+		},
+		{ 
+			"invNum":15,
+			"invDate":"11-07-2017",
+			"invAmt":135.12,
+			"compId":5,
+			"products":[
+				{ "prodId":3, "qty":12 },
+				{ "prodId":10, "qty":12 }
+			]
+		},
+		{ 
+			"invNum":16,
+			"invDate":"11-07-2017",
+			"invAmt":38.76,
+			"compId":6,
+			"products":[
+				{ "prodId":3, "qty":5 },
+				{ "prodId":7, "qty":1 }
+			]
+		},
+		{ 
+			"invNum":17,
+			"invDate":"12-07-2017",
+			"invAmt":225.96,
+			"compId":7,
+			"products":[
+				{ "prodId":6, "qty":6 },
+				{ "prodId":4, "qty":8 }
+			]
+		},
+		{ 
+			"invNum":18,
+			"invDate":"13-07-2017",
+			"invAmt":405.46,
+			"compId":8,
+			"products":[
+				{ "prodId":6, "qty":7 },
+				{ "prodId":8, "qty":6 }
+			]
+		},
+		{ 
+			"invNum":19,
+			"invDate":"14-07-2017",
+			"invAmt":181.74,
+			"compId":9,
+			"products":[
+				{ "prodId":5, "qty":9 },
+				{ "prodId":3, "qty":6 }
+			]
+		},
+		{ 
+			"invNum":20,
+			"invDate":"14-07-2017",
+			"invAmt":25.38,
+			"compId":10,
+			"products":[
+				{ "prodId":2, "qty":3 },
+				{ "prodId":1, "qty":3 }
+			]
+		},
+		{ 
+			"invNum":21,
+			"invDate":"14-07-2017",
+			"invAmt":92.72,
+			"compId":1,
+			"products":[
+				{ "prodId":9, "qty":5 },
+				{ "prodId":7, "qty":7 }
+			]
+		},
+		{ 
+			"invNum":22,
+			"invDate":"15-07-2017",
+			"invAmt":309.06,
+			"compId":2,
+			"products":[
+				{ "prodId":6, "qty":9 },
+				{ "prodId":5, "qty":9 }
+			]
+		},
+		{ 
+			"invNum":23,
+			"invDate":"15-07-2017",
+			"invAmt":266.92,
+			"compId":3,
+			"products":[
+				{ "prodId":8, "qty":3 },
+				{ "prodId":6, "qty":7 }
+			]
+		},
+		{ 
+			"invNum":24,
+			"invDate":"16-07-2017",
+			"invAmt":218.88,
+			"compId":4,
+			"products":[
+				{ "prodId":6, "qty":9 },
+				{ "prodId":2, "qty":9 }
+			]
+		},
+		{ 
+			"invNum":25,
+			"invDate":"16-07-2017",
+			"invAmt":51.15,
+			"compId":5,
+			"products":[
+				{ "prodId":10, "qty":1 },
+				{ "prodId":8, "qty":1 }
+			]
+		},
+		{ 
+			"invNum":26,
+			"invDate":"17-07-2017",
+			"invAmt":182.94,
+			"compId":6,
+			"products":[
+				{ "prodId":5, "qty":6 },
+				{ "prodId":4, "qty":6 }
+			]
+		},
+		{ 
+			"invNum":27,
+			"invDate":"17-07-2017",
+			"invAmt":45.82,
+			"compId":7,
+			"products":[
+				{ "prodId":3, "qty":2 },
+				{ "prodId":9, "qty":4 }
+			]
+		},
+		{ 
+			"invNum":28,
+			"invDate":"18-07-2017",
+			"invAmt":116.44,
+			"compId":8,
+			"products":[
+				{ "prodId":7, "qty":8 },
+				{ "prodId":4, "qty":4 }
+			]
+		},
+		{ 
+			"invNum":29,
+			"invDate":"19-07-2017",
+			"invAmt":312.30,
+			"compId":9,
+			"products":[
+				{ "prodId":6, "qty":15 },
+				{ "prodId":1, "qty":15 }
+			]
+		},
+		{ 
+			"invNum":30,
+			"invDate":"20-07-2017",
+			"invAmt":73.68,
+			"compId":10,
+			"products":[
+				{ "prodId":7, "qty":6 },
+				{ "prodId":10, "qty":6 }
+			]
+		}
+	]
+}
